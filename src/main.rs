@@ -16,7 +16,7 @@ fn main() {
     let hotkeys_blocker_executor = Arc::new(RwLock::new(HotkeysBlockerExecutor::default()));
     let hotkeys_blocker_executor_ref = hotkeys_blocker_executor.clone();
     thread::spawn(move || {
-        sleep(Duration::from_secs(5));
+        sleep(Duration::from_secs(10));
         hotkeys_blocker_executor_ref.read().unwrap().stop();
     });
     let hotkeys = vec!["cmd+q".to_string(), "cmd+opt+esc".to_string()];
