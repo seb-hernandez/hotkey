@@ -19,7 +19,11 @@ fn main() {
         sleep(Duration::from_secs(10));
         hotkeys_blocker_executor_ref.read().unwrap().stop();
     });
-    let hotkeys = vec!["cmd+q".to_string(), "cmd+opt+esc".to_string()];
+    let hotkeys = vec![
+        "cmd+c".to_string(),
+        "cmd+v".to_string(),
+        "cmd+opt+esc".to_string(),
+    ];
     hotkeys_blocker_executor
         .read()
         .unwrap()
